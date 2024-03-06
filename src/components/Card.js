@@ -1,10 +1,22 @@
 import React from "react";
+import './Card.css'
 
 export const Card = (props) => {
-    return(
-        <div style = {{minwidth: '200px', minHeight: '200px', textAlign: 'center', border: '1px solid black', margin: '10px', padding: '10px'}}>
-            <h2 onClick={() => props.click(props.name)}>Name: {props.name}</h2>
-            <h3>Color: {props.color}</h3>
-        </div>
-    )
+        if(props.show){
+            return(
+                <div className="Card">
+                    <h2 onClick={() => props.click(props.name)}>Name: {props.name}</h2>
+                    <h3>Color: {props.color}</h3>
+                    <h4>Описание:</h4>
+                    <p>fwefewf</p>
+                </div>
+            )
+        } else {
+            return(
+                <div className="Card">
+                    <h2 onClick={() => props.click(props.name)}>Name: {props.name}</h2>
+                    <h3>Color: {props.color}</h3>
+                </div>
+            )
+        }
 }
